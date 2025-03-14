@@ -1,7 +1,17 @@
+import { Header } from "./containers/header";
+import { Route, Routes } from "react-router-dom";
+import { ProductListing } from "./containers/product-listing";
+import { ProductDetail } from "./containers/product-detail";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<ProductListing/>}/>
+        <Route path="/product/:productId" element={<ProductDetail/>}/>
+        <Route>404 not found!</Route>
+      </Routes>
     </>
   );
 }
